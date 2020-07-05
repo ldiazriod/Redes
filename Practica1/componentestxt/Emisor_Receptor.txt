@@ -1,0 +1,31 @@
+﻿library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Emisor_Receptor is
+    Port (CLK, RST: in std_logic;
+          data_in: in std_logic_vector(15 downto 0);
+          data_out: out std_logic_vector(15 downto 0));
+end Emisor_Receptor;
+
+architecture Structural of Emisor_Receptor is
+    component emisor is
+        Port (CLK, RST: in std_logic;
+          data_in : in std_logic_vector(15 downto 0);
+          end_emisor: out std_logic;
+          final_bit_out: out std_logic);
+    end component;
+    component receptor is
+        Port (CLK,RST : in  std_logic;
+          activate: in  std_logic;
+          bit_in:   in  std_logic;
+          msj:      out std_logic_vector(15 downto 0));
+    end component;
+    
+    signal final_bit, activate, bit_in: std_logic;
+
+begin
+    em: emisor port map(CLK=>CLK,RST=>RST, data_in=>data_in, end_emisor=>activate,final_bit_out=>final_bit);
+    
+    recep: receptor port map(CLK=>CLK,RST=>RST,activate=>activate, bit_in=>final_bit, msj=>data_out);
+
+end Structural;

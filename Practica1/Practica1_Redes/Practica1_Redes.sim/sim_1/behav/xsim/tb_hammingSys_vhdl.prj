@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Practica1_Redes.srcs/sources_1/new/HammingSys.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/decoder.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/encoder.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/tb_hammingSys.vhd" \
+
+# Do not sort compile order
+nosort

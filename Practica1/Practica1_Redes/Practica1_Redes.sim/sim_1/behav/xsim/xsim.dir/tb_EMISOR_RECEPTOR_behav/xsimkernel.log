@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_EMISOR_RECEPTOR_behav/xsimk.exe -simmode gui -wdb tb_EMISOR_RECEPTOR_behav.wdb -simrunnum 0 -socket 50182
+Design successfully loaded
+Design Loading Memory Usage: 5224 KB (Peak: 5224 KB)
+Design Loading CPU Usage: 30 ms
+Simulation completed
+Simulation Memory Usage: 13884 KB (Peak: 13884 KB)
+Simulation CPU Usage: 1186 ms

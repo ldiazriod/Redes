@@ -1,0 +1,115 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity tb_bitstuffingFSM_SP is
+--  Port ( );
+end tb_bitstuffingFSM_SP;
+
+architecture Structural of tb_bitstuffingFSM_SP is
+    component PS1Emisor is
+        port(  CLK, RST : in std_logic;
+               Q : in std_logic_vector(35 downto 0);
+               enable: in std_logic;
+               beginPS: in std_logic;
+               bit_out: out std_logic);
+    end component;
+    
+    
+    component bitstuffingFSM is
+          port (CLK, RST:   in  std_logic;
+              bit_in: in  std_logic;
+              bit_out:    out std_logic;
+              PS_control: out std_logic;
+              end_signal: out std_logic;
+              stuffed_bits: out integer);      
+    end component;
+    component SP is
+       port(CLK, RST, serial_in,begin_signal : in std_logic; 
+         Q : out std_logic_vector(111 downto 0);
+         end_signal: out std_logic);
+    end component;
+    signal bit_outPS: std_logic;
+    signal enable: std_logic;
+    signal endHamming: std_logic;
+    signal encoder_out: std_logic_vector(35 downto 0);
+    
+    signal Q : std_logic_vector(111 downto 0);-- Salidas UUT
+    signal CLK : std_logic; -- Entradas UUT
+    signal RST, begin_signal, end_signal_sp : std_logic;
+    
+    signal bit_in, bit_outFSM, PS_ctrl, end_signal_fsm: std_logic;
+    signal stuffed_bits: integer;
+    -- --------------------------
+    
+begin
+    PS: PS1Emisor port map(CLK=>CLK, RST=>RST, Q=>encoder_out, 
+                               enable=>PS_ctrl,beginPS=>endHamming, 
+                               bit_out=>bit_outPS);
+    FSM:   bitstuffingFSM port map(CLK => CLK, RST => RST,
+                                    bit_in => bit_outPS,
+                                    bit_out => bit_outFSM,
+                                    PS_control => PS_ctrl, end_signal => end_signal_fsm,
+                                    stuffed_bits => stuffed_bits);
+                                 
+    S_P: SP port map(CLK => CLK, RST => RST,begin_signal=>end_signal_fsm,
+        Serial_in => bit_outFSM, Q=>Q, end_signal=>end_signal_sp );
+    
+    process begin
+        RST <= '1'; wait for 20 ns;
+        RST <= '0'; wait;
+    end process;
+
+    process begin
+        CLK <= '1'; wait for 10ns;
+        CLK <= '0'; wait for 10ns;
+    end process;
+    
+    process begin
+        endHamming <= '1' ;wait;
+    end process;
+    process begin
+        --encoder_out <= "100000011001101010111011000001101011";wait;
+        encoder_out <= "100000011110101011110101011110101011";wait;
+        
+    end process;
+--    process begin
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '0'; wait for 20 ns;
+--        bit_in <= '1'; wait for 20 ns;
+--        bit_in <= '1'; wait;
+--    end process;
+end Structural;
+        

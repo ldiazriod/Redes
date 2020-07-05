@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"tb_emisorr_func_synth.vhd" \
+"../../../../../Practica1_Redes.srcs/sources_1/new/tb_emisorr.vhd" \
+
+# Do not sort compile order
+nosort

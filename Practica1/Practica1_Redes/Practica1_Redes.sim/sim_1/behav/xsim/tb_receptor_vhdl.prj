@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Practica1_Redes.srcs/sources_1/new/CHECKER.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/PS1Recep.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/Receptor.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/SP1Recep.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/decodeSys.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/decoder.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/encoder.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/unbitstuffingFSM.vhd" \
+"../../../../Practica1_Redes.srcs/sim_1/new/tb_receptor.vhd" \
+
+# Do not sort compile order
+nosort

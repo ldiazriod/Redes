@@ -1,0 +1,59 @@
+
+*** Running vivado
+    with args -log Emisor_Receptor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Emisor_Receptor.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Emisor_Receptor.tcl -notrace
+Command: synth_design -top Emisor_Receptor -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6176 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 362.402 ; gain = 101.297
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Emisor_Receptor' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor_Receptor.vhd:10]
+INFO: [Synth 8-3491] module 'Emisor' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor.vhd:4' bound to instance 'em' of component 'emisor' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor_Receptor.vhd:27]
+INFO: [Synth 8-638] synthesizing module 'Emisor' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor.vhd:11]
+INFO: [Synth 8-3491] module 'encoderSys' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoderSys.vhd:4' bound to instance 'encode' of component 'encoderSys' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'encoderSys' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoderSys.vhd:10]
+INFO: [Synth 8-3491] module 'encoder' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoder.vhd:5' bound to instance 'encoder1' of component 'encoder' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoderSys.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'encoder' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoder.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'encoder' (1#1) [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoder.vhd:10]
+INFO: [Synth 8-3491] module 'encoder' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoder.vhd:5' bound to instance 'endoder2' of component 'encoder' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoderSys.vhd:22]
+INFO: [Synth 8-3491] module 'encoder' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoder.vhd:5' bound to instance 'encoder3' of component 'encoder' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoderSys.vhd:24]
+INFO: [Synth 8-3491] module 'encoder' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoder.vhd:5' bound to instance 'endocer4' of component 'encoder' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoderSys.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'encoderSys' (2#1) [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/encoderSys.vhd:10]
+INFO: [Synth 8-3491] module 'PS1Emisor' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/PS1Emisor.vhd:4' bound to instance 'PS1' of component 'PS1Emisor' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'PS1Emisor' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/PS1Emisor.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'PS1Emisor' (3#1) [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/PS1Emisor.vhd:12]
+INFO: [Synth 8-3491] module 'bitstuffingFSM' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/bitstuffingFSM.vhd:5' bound to instance 'FSM' of component 'bitstuffingFSM' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor.vhd:78]
+INFO: [Synth 8-638] synthesizing module 'bitstuffingFSM' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/bitstuffingFSM.vhd:14]
+WARNING: [Synth 8-614] signal 'counter' is read in the process but is not in the sensitivity list [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/bitstuffingFSM.vhd:55]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/bitstuffingFSM.vhd:40]
+WARNING: [Synth 8-3848] Net end_signal in module/entity bitstuffingFSM does not have driver. [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/bitstuffingFSM.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'bitstuffingFSM' (4#1) [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/bitstuffingFSM.vhd:14]
+INFO: [Synth 8-3491] module 'SP' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/SP.vhd:5' bound to instance 'SP1' of component 'SP' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'SP' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/SP.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'SP' (5#1) [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/SP.vhd:10]
+INFO: [Synth 8-3491] module 'joiner' declared at 'C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/joiner.vhd:5' bound to instance 'join' of component 'joiner' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'joiner' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/joiner.vhd:14]
+ERROR: [Synth 8-690] width mismatch in assignment; target has 256 bits, source has 440 bits [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/joiner.vhd:86]
+ERROR: [Synth 8-285] failed synthesizing module 'joiner' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/joiner.vhd:14]
+ERROR: [Synth 8-285] failed synthesizing module 'Emisor' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor.vhd:11]
+ERROR: [Synth 8-285] failed synthesizing module 'Emisor_Receptor' [C:/Users/mruiz/Practica1_Redes/Practica1_Redes.srcs/sources_1/new/Emisor_Receptor.vhd:10]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 418.793 ; gain = 157.688
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 3 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 17 16:40:01 2020...

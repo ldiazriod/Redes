@@ -1,0 +1,13 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Practica1_Redes.srcs/sources_1/new/PS1Emisor.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/PS2Emisor.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/SP.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/bitstuffingFSM.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/encoder.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/encoderSys.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/joiner.vhd" \
+"../../../../Practica1_Redes.srcs/sources_1/new/tb_emisor.vhd" \
+
+# Do not sort compile order
+nosort

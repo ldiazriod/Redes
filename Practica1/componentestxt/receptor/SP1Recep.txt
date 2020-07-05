@@ -1,0 +1,35 @@
+﻿library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity SP1Recep is
+    Port (CLK,RST: in std_logic;
+          bit_in, enable: in std_logic;
+          end_SP1Recep: out std_logic;
+          data_out: out std_logic_vector(255 downto 0));
+end SP1Recep;
+
+architecture Behavioral of SP1Recep is
+    signal counter: integer := 0;
+    signal auxi: std_logic_vector(255 downto 0) := (others=>'0');
+begin
+    
+    process(CLK, bit_in, enable) begin
+        if(rising_edge(CLK))then
+            if(RST='1')then
+                data_out <= (others=>'0');
+            else
+                if(enable = '1')then
+                    if(counter <= 255) then
+                        auxi <= auxi(254 downto 0) & bit_in;
+                        counter <= counter + 1;
+                    end if;
+                    if(counter = 256) then
+                        end_SP1Recep <= '1';
+                        data_out<=auxi;
+                    end if;
+                end if;
+            end if;
+        end if;
+    end process;
+
+end Behavioral;
